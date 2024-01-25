@@ -4,10 +4,16 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <string.h>
+#include <limits.h>
+#include <inttypes.h>
 
 #define BYTES 2147483648
 
 int main(void) {
+        printf("Size_t = %zd\n", sizeof(size_t));
+        printf("SSize_t = %zd\n", sizeof(ssize_t));
+        printf("SIZE_MAX = %lu\n", ULONG_MAX);
+        printf("SSIZE_MAX = %ld\n", LONG_MAX);
 	void* p = malloc(BYTES);
 	printf("p=%p\n", p);
 	if (!p) perror("malloc");
